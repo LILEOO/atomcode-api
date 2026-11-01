@@ -1,0 +1,40 @@
+{
+  "name": "atomcode-api",
+  "version": "0.1.0",
+  "description": "Unofficial standalone OpenAI-compatible API gateway for AtomCode (AtomGit CodingPlan)",
+  "type": "module",
+  "main": "./src/server.mjs",
+  "exports": {
+    ".": "./src/server.mjs",
+    "./runtime": "./src/runtime.mjs"
+  },
+  "bin": {
+    "atomcode-api": "./bin/atomcode-api.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "NOTICE.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "atomcode",
+    "atomgit",
+    "codingplan",
+    "openai-compatible",
+    "api-gateway"
+  ],
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:coverage": "node --experimental-test-coverage --test test/*.test.mjs",
+    "test:coverage:enforce": "node --experimental-test-coverage --test-coverage-lines=80 --test-coverage-branches=80 --test-coverage-functions=80 --test test/*.test.mjs",
+    "pack:check": "npm pack --dry-run --json"
+  }
+}
